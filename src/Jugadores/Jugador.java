@@ -26,7 +26,6 @@ public final class Jugador extends Persona{
         return nacionalidad;
     }
 
-    
     @Override
     public int getEdad() {
         return edad;
