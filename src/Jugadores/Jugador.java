@@ -46,5 +46,16 @@ public final class Jugador extends Persona{
         this.edad=getEdad();
         this.fechaNacimiento=getFechaNacimiento();
     }
+
+    @Override
+    public String toString() {
+        return 
+               "\n Numero: "+numero+ 
+               "\n Posicion: "+posicion+
+               "\n Nombre: "+nombre+
+               "\n Nacionalidad: "+nacionalidad+
+               "\n edad: "+edad+
+               "\n Fecha de Nacimiento: "+fechaNacimiento;
+    }
     
 }
