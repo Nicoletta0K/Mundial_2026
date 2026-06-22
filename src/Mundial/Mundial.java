@@ -1,7 +1,7 @@
 package Mundial;
-import Selecciones.Seleccion;
 import Partidos.Partido;
 import java.util.Date;
+import selecciones.Seleccion;
 
 public class Mundial {
     private String nombre;
@@ -88,8 +88,8 @@ public class Mundial {
     Partido[] resultado = new Partido[50];
     int cont = 0;
     for (int i = 0; i < cantPartidos; i++) {
-        if (partidos[i].getVisitante().getNombre().equals(nombre) ||
-            partidos[i].getLocal().getNombre().equals(nombre)) {
+        if (partidos[i].getVisitante().equals(nombre) ||
+            partidos[i].getLocal().equals(nombre)) {
 
             resultado[cont] = partidos[i];
             cont++;
