@@ -1,6 +1,6 @@
 package Arbitros;
 
-import personas.Persona;
+import Personas.Persona;
 import java.time.LocalDate;
 
 public class Arbitro extends Persona {

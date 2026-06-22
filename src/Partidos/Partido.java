@@ -80,4 +80,16 @@ public class Partido {
     public void setFecha(LocalDate fecha) { this.fecha = fecha; }
     public void setHora(LocalTime hora) { this.hora = hora; }
     public void setResultado(Resultado resultado) { this.resultado = resultado; }
+
+    public Object getVisitante() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public Object getLocal() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public Object getVisitante() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
