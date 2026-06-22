@@ -1,21 +1,21 @@
 package Jugadores;
-import Personas.Persona;
-
+import java.time.LocalDate;
+import personas.Persona;
 public class Jugador extends Persona {
 
-    private int numero;
+    private int numeroCamiseta;
     private String posicion;
 
-    public int getNumero() {
-        return numero;
+    public int getNumeroCamiseta() {
+        return numeroCamiseta;
     }
 
     public String getPosicion() {
         return posicion;
     }
 
-    public void setNumero(int numero) {
-        this.numero = numero;
+    public void setNumeroCamiseta(int numero) {
+        this.numeroCamiseta = numeroCamiseta;
     }
 
     public void setPosicion(String posicion) {
@@ -23,8 +23,8 @@ public class Jugador extends Persona {
     }
     public Jugador(int numero, String posicion, String nombre, String nacionalidad,
                  int edad, String fechaNacimiento) {
-        super(nombre, nacionalidad, edad, fechaNacimiento);
-        this.numero = numero;
+        super(nombre, nacionalidad, LocalDate.parse(fechaNacimiento));
+        this.numeroCamiseta = numeroCamiseta;
         this.posicion = posicion;
     }
     @Override
@@ -33,7 +33,7 @@ public class Jugador extends Persona {
                "\nNacionalidad: " + nacionalidad +
                "\nEdad: " + edad +
                "\nFecha Nacimiento: " + fechaNacimiento +
-               "\nNumero: " + numero +
+               "\nNumero: " + numeroCamiseta +
                "\nPosicion: " + posicion;
     }
 }

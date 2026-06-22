@@ -1,9 +1,9 @@
 package Partidos;
-
-import Selecciones.Seleccion;
+import selecciones.Seleccion;
 import Arbitros.Arbitro;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import resultados.Resultado;
 
 public class Partido {
     private Seleccion seleccionLocal;
