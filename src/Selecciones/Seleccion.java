@@ -10,6 +10,28 @@ public class Seleccion {
     private Jugador[] jugadores;
     private int contadorJugadores;
     
+    public String getNombre() {
+        return nombre;
+    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    public Grupos getGrupo() {
+        return grupo;
+    }
+    public void setGrupo(Grupos grupo) {
+        this.grupo = grupo;
+    }
+    public Entrenador getEntrenador() {
+        return entrenador;
+    }
+    public void setEntrenador(Entrenador entrenador) {
+        this.entrenador = entrenador;
+    }
+    public Jugador[] getJugadores() {
+        return jugadores;
+    }
+    
     public Seleccion(String nombre, Grupos grupo, Entrenador entrenador) {
         this.nombre = nombre;
         this.grupo = grupo;

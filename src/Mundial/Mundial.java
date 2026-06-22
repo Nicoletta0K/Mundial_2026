@@ -1,7 +1,8 @@
 package Mundial;
-import Selecciones.Seleccion;
+import selecciones.Seleccion;
 import Partidos.Partido;
-import java.util.Date;
+import Selecciones.Grupos; 
+import java.time.LocalDate;
 
 public class Mundial {
     private String nombre;
@@ -19,29 +20,27 @@ public class Mundial {
     }
 
     public void agregarSeleccion(Seleccion s) {
-        selecciones[cantSelecciones] = s;
-        cantSelecciones++;
+        if (cantSelecciones < selecciones.length) {
+            selecciones[cantSelecciones] = s;
+            cantSelecciones++;
+        }
     }
 
     public boolean eliminarSeleccion(String nombre) {
-
         for (int i = 0; i < cantSelecciones; i++) {
             if (selecciones[i].getNombre().equals(nombre)) {
-
                 for (int j = i; j < cantSelecciones - 1; j++) {
                     selecciones[j] = selecciones[j + 1];
                 }
-
+                selecciones[cantSelecciones - 1] = null;
                 cantSelecciones--;
                 return true;
             }
         }
-
         return false;
     }
 
     public boolean existeSeleccion(String nombre) {
-
         for (int i = 0; i < cantSelecciones; i++) {
             if (selecciones[i].getNombre().equals(nombre)) {
                 return true;
@@ -55,63 +54,64 @@ public class Mundial {
     }
 
     public void agregarPartido(Partido p) {
-        partidos[cantPartidos] = p;
-        cantPartidos++;
+        if (cantPartidos < partidos.length) {
+            partidos[cantPartidos] = p;
+            cantPartidos++;
+        }
     }
 
     public boolean eliminarPartido(Partido p) {
         for (int i = 0; i < cantPartidos; i++) {
             if (partidos[i].equals(p)) {
-
                 for (int j = i; j < cantPartidos - 1; j++) {
                     partidos[j] = partidos[j + 1];
                 }
+                partidos[cantPartidos - 1] = null; 
                 cantPartidos--;
                 return true;
             }
         }
         return false;
     }
+
     public int contarPartidos() {
         return cantPartidos;
     }
+
     public Seleccion buscarSeleccion(String nombre) {
-    for (int i = 0; i < cantSelecciones; i++) {
-        if (selecciones[i].getNombre().equals(nombre)) {
-            return selecciones[i];
+        for (int i = 0; i < cantSelecciones; i++) {
+            if (selecciones[i].getNombre().equals(nombre)) {
+                return selecciones[i];
+            }
         }
+        return null;
     }
-    return null;
-    }
-    
     public Partido[] obtenerPartidosDeSeleccion(String nombre) {
-    Partido[] resultado = new Partido[50];
-    int cont = 0;
-    for (int i = 0; i < cantPartidos; i++) {
-        if (partidos[i].getVisitante().getNombre().equals(nombre) ||
-            partidos[i].getLocal().getNombre().equals(nombre)) {
+        Partido[] resultado = new Partido[50];
+        int cont = 0;
+        for (int i = 0; i < cantPartidos; i++) {
+            if (partidos[i].getSeleccionVisitante().getNombre().equals(nombre) ||
+                partidos[i].getSeleccionLocal().getNombre().equals(nombre)) {
 
-            resultado[cont] = partidos[i];
-            cont++;
+                resultado[cont] = partidos[i];
+                cont++;
+            }
         }
+        return resultado;
     }
-    return resultado;
-    }
-    
-    public Seleccion[] obtenerSeleccionesGrupo(String grupo) {
-    Seleccion[] resultado = new Seleccion[50];
-    int cont = 0;
+    public Seleccion[] obtenerSeleccionesGrupo(Grupos grupo) {
+        Seleccion[] resultado = new Seleccion[50];
+        int cont = 0;
 
-    for (int i = 0; i < cantSelecciones; i++) {
-        if (selecciones[i].getGrupo().equals(grupo)) {
-            resultado[cont] = selecciones[i];
-            cont++;
+        for (int i = 0; i < cantSelecciones; i++) {
+            if (selecciones[i].getGrupo() == grupo) {
+                resultado[cont] = selecciones[i];
+                cont++;
+            }
         }
+        return resultado;
     }
-
-    return resultado;
-    }
-    public Partido[] buscarPartidosPorFecha(Date fecha) {
+    public Partido[] buscarPartidosPorFecha(LocalDate fecha) {
         Partido[] resultado = new Partido[50];
         int cont = 0;
         for (int i = 0; i < cantPartidos; i++) {

@@ -1,4 +1,5 @@
 package Partidos;
+
 import selecciones.Seleccion;
 import Arbitros.Arbitro;
 import java.time.LocalDate;
@@ -73,23 +74,11 @@ public class Partido {
     public LocalTime getHora() { return hora; }
     public Arbitro[] getArbitros() { return arbitros; }
     public Resultado getResultado() { return resultado; }
-
+    
     public void setSeleccionLocal(Seleccion seleccionLocal) { this.seleccionLocal = seleccionLocal; }
     public void setSeleccionVisitante(Seleccion seleccionVisitante) { this.seleccionVisitante = seleccionVisitante; }
     public void setEstadio(String estadio) { this.estadio = estadio; }
     public void setFecha(LocalDate fecha) { this.fecha = fecha; }
     public void setHora(LocalTime hora) { this.hora = hora; }
     public void setResultado(Resultado resultado) { this.resultado = resultado; }
-
-    public Object getVisitante() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public Object getLocal() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public Object getVisitante() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }
