@@ -1,12 +1,10 @@
 package Jugadores;
 import Personas.Persona;
 
-public final class Jugador extends Persona{
-    protected int numero;
-    protected String posicion;
-    public Jugador(String nombre, String nacionalidad, int edad, String fechaNacimiento) {
-        super(nombre, nacionalidad, edad, fechaNacimiento);
-    }
+public class Jugador extends Persona {
+
+    private int numero;
+    private String posicion;
 
     public int getNumero() {
         return numero;
@@ -16,45 +14,26 @@ public final class Jugador extends Persona{
         return posicion;
     }
 
-    @Override
-    public String getNombre() {
-        return nombre;
+    public void setNumero(int numero) {
+        this.numero = numero;
     }
 
-    @Override
-    public String getNacionalidad() {
-        return nacionalidad;
+    public void setPosicion(String posicion) {
+        this.posicion = posicion;
     }
-
-    @Override
-    public int getEdad() {
-        return edad;
-    }
-    
-    @Override
-    public String getFechaNacimiento() {
-        return fechaNacimiento;
-    }
-
-    public Jugador(int numero, String posicion, String nombre, String nacionalidad, int edad, String fechaNacimiento) {
+    public Jugador(int numero, String posicion, String nombre, String nacionalidad,
+                 int edad, String fechaNacimiento) {
         super(nombre, nacionalidad, edad, fechaNacimiento);
         this.numero = numero;
         this.posicion = posicion;
-        this.nombre=getNombre();
-        this.nacionalidad=getNacionalidad();
-        this.edad=getEdad();
-        this.fechaNacimiento=getFechaNacimiento();
     }
-
     @Override
     public String toString() {
-        return 
-               "\n Numero: "+numero+ 
-               "\n Posicion: "+posicion+
-               "\n Nombre: "+nombre+
-               "\n Nacionalidad: "+nacionalidad+
-               "\n edad: "+edad+
-               "\n Fecha de Nacimiento: "+fechaNacimiento;
+        return "\nNombre: " + nombre +
+               "\nNacionalidad: " + nacionalidad +
+               "\nEdad: " + edad +
+               "\nFecha Nacimiento: " + fechaNacimiento +
+               "\nNumero: " + numero +
+               "\nPosicion: " + posicion;
     }
-    
 }
